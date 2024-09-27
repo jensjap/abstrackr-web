@@ -13,8 +13,11 @@ setup(
     author_email='byron_wallace@brown.edu',
     url='https://research.brown.edu/myresearch/Byron_Wallace',
     install_requires=[
+        "pycairo==1.11.1",
+        "pygobject==3.27.0",
+        "PasteDeploy==1.5.2",
         "Pylons==1.0",
-        "SQLAlchemy>=0.5",
+        "SQLAlchemy==1.2.11",
         "TurboMail>=3.0.3,<=3.0.99",
         "repoze.what-quickstart>=1.0.8,<=1.0.99",
         "repoze.what_pylons>=1.0,<=1.0.99",
@@ -41,5 +44,5 @@ setup(
 
     [paste.app_install]
     main = pylons.util:PylonsInstaller
-    """,
+    """
 )
