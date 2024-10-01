@@ -24,7 +24,8 @@ RUN apt-get update && apt-get install -y \
     python-cairo \
     python-gi-cairo \
     build-essential \
-    pkg-config
+    pkg-config \
+    git
 
 # Set PKG_CONFIG_PATH if necessary
 ENV PKG_CONFIG_PATH=/usr/lib/pkgconfig:$PKG_CONFIG_PATH
@@ -43,11 +44,19 @@ RUN pip install pygobject==3.27.0
 # Ensure that pip is installed and upgrade if necessary
 RUN pip install -r requirements.txt
 
-# Install Eutils from GitHub
-RUN pip install git+https://github.com/hpiwowar/eutils.git#egg=Eutils
+# Clone Eutils from GitHub and install it
+RUN git clone https://github.com/hpiwowar/eutils && \
+    cd eutils && \
+    python setup.py build && \
+    python setup.py install --user && \
+    cd .. && \
+    rm -rf eutils  # Clean up to reduce image size
+
+# Verify installation of Eutils
+RUN python -c "import EUtils; print('Eutils installed successfully!')"
 
 # Install project dependencies from setup.py
-RUN python setup.py develop --verbose
+RUN python setup.py install --verbose
 
 # Create the log directory and log file with the correct permissions
 RUN mkdir -p /var/log/abstrackr && touch /var/log/abstrackr/default.log && chmod 777 /var/log/abstrackr/default.log
@@ -69,4 +78,4 @@ ENV SMTP_SENDER=<smtp_sender>
 EXPOSE 5000
 
 # Run your Pylons application (adjust this based on how your app is started)
-CMD ["paster", "serve", "--reload", "production.ini"]
+CMD ["paster", "serve", "--reload", "development.ini"]

@@ -26,7 +26,6 @@ setup(
         "WebOb>=1.0.7,<=1.0.99",
         "Pygments==2.2.0",
         "MarkupSafe==0.11",
-        "Eutils @ git+https://github.com/hpiwowar/eutils.git#egg=Eutils",
     ],
     setup_requires=["PasteScript>=1.6.3"],
     packages=find_packages(exclude=['ez_setup']),
