@@ -2,6 +2,7 @@
 appdirs==1.4.3
 asn1crypto==0.24.0
 Beaker==1.10.0
+Bio==1.57
 cffi==1.15.1
 configparser==4.0.2
 contextlib2==0.6.0.post1
