@@ -46,6 +46,9 @@ RUN pip install -r requirements.txt
 # Install project dependencies from setup.py
 RUN python setup.py develop --verbose
 
+# Create the log directory and log file with the correct permissions
+RUN mkdir -p /var/log/abstrackr && touch /var/log/abstrackr/default.log && chmod 777 /var/log/abstrackr/default.log
+
 # Set up external database connection information via environment variables
 # You'll pass these when running the container
 ENV DB_HOST=<db_host>
