@@ -43,6 +43,9 @@ RUN pip install pygobject==3.27.0
 # Ensure that pip is installed and upgrade if necessary
 RUN pip install -r requirements.txt
 
+# Install Eutils from GitHub
+RUN pip install git+https://github.com/hpiwowar/eutils.git#egg=Eutils
+
 # Install project dependencies from setup.py
 RUN python setup.py develop --verbose
 
