@@ -35,9 +35,9 @@
     <body>
         <div style="background-color: #ffebee; border: 1px solid #ef9a9a; padding: 15px; margin: 20px 0; text-align: center;">
             <p style="font-size: 16px; color: #b71c1c; margin: 0;">
-                <strong>Important Notice:</strong> Abstrackr is no longer actively maintained. 
-                For a more up-to-date abstract screening tool with machine learning assistance, 
-                please visit <a href="https://srdrplus.ahrq.gov/" style="color: #0d47a1;">https://srdrplus.ahrq.gov/</a>.
+                <strong>Important Notice:</strong> Abstrackr is no longer actively maintained and only limited support is available. 
+                For a more up-to-date abstract screening tool with machine learning assistance and full support, 
+                we recommend visiting <a href="https://srdrplus.ahrq.gov/" style="color: #0d47a1;">https://srdrplus.ahrq.gov/</a>.
             </p>
         </div>
 
