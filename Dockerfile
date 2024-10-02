@@ -56,7 +56,7 @@ RUN git clone https://github.com/hpiwowar/eutils && \
 RUN python -c "import EUtils; print('Eutils installed successfully!')"
 
 # Install project dependencies from setup.py
-RUN python setup.py install --verbose
+RUN python setup.py develop --verbose
 
 # Create the log directory and log file with the correct permissions
 RUN mkdir -p /var/log/abstrackr && touch /var/log/abstrackr/default.log && chmod 777 /var/log/abstrackr/default.log

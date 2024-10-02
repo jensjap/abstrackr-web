@@ -1,4 +1,3 @@
--e git+https://github.com/jensjap/abstrackr-web.git@2be217e6dd4c2a4b677e0a82235b768d00abf785#egg=abstrackr
 appdirs==1.4.3
 asn1crypto==0.24.0
 Beaker==1.10.0
